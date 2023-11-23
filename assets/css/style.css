@@ -1,0 +1,53 @@
+/* these colors were taken from a screenshot of an AS/400 5250 terminal */
+:root {
+  --blue: #608bf6;
+  --blue-darker: #3c70f3;
+  --black: #1c1c1c;
+  --green: #39e600;
+  --green-darker: #2db300;
+  --grey: #949494;
+}
+
+html {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12pt;
+  line-height: 150%;
+  background-color: var(--black);
+  color: var(--green);
+}
+
+h1::before {
+  content: "# ";
+}
+
+h2::before {
+  content: "## ";
+}
+
+h3::before {
+  content: "### ";
+}
+
+a {
+  color: var(--green-darker);
+}
+
+a:hover {
+  color: var(--blue);
+}
+
+/* a good website needs to look great on paper! */
+@media print {
+  html {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 0%);
+  }
+
+  a {
+    color: hsl(0, 0%, 66%);
+  }
+
+  main {
+    overflow: unset;
+  }
+}
