@@ -27,8 +27,7 @@ body {
 /* General & 'Reset' Stuff */
 
 .container {
-  width: 90%;
-  max-width: $container-max-width;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -271,23 +270,12 @@ a {
 /* Added
 */
 
-.left-column {
-  flex: 1;
-  padding: 20px;
-  background: $body-background url("../images/bkg.png") 0 0;
-  color: $body-foreground;
-  font-size: 16px;
-  line-height: 1.5;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-  overflow: hidden; /* Hide overflow for typewriter effect */
+#left-column {
+  width: 33%;
+  float: left;
 }
 
-.right-column {
-  flex: 1;
-  padding: 20px;
-  background: $body-background url("../images/bkg.png") 0 0;
-  color: $body-foreground;
-  font-size: 16px;
-  line-height: 1.5;
-  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
-}
+#right-column {
+  width: 66%;
+  float: right;
+  }
