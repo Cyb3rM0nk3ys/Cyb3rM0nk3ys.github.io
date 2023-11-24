@@ -1,5 +1,8 @@
-title: Hacker theme
-description: Hacker is a theme for GitHub Pages.
+title: Cyb3rM0nk3ys
+description: Official site of the Cyb3rM0nk3ys CTF team.
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-hacker
+collections:
+  achievements:
+    output: true

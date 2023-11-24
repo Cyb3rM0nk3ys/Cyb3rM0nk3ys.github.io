@@ -16,11 +16,6 @@
     <section id="writeup">
         <small>{{ page.date | date: "%-d %B %Y" }}</small>
         <h1><b>{{ page.title }}</b></h1>
-        <p class="view">by {{ page.author | default: site.author }} | Category: {{ page.chall-category }}</p>
       <hr>
       {{content}}
-
-      {% if page.tags %}
-      <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
-      {% endif %}
     </section>
