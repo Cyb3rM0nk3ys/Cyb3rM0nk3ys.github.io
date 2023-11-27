@@ -2,10 +2,7 @@
 <html lang="{{ site.lang | default: " en-US" }}">
 
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
     {% include head-custom.html %}
 
     {% seo %}
@@ -14,7 +11,9 @@
 <body>
     <div class="container">
         <center>
-            <b><h1>404 ~ banana not found</h1></b>
+            <b>
+                <h1>404 ~ banana not found</h1>
+            </b>
             <section id="main_content">
                 <div id="gif-container">
                     <img id="gif" src="">
@@ -27,11 +26,37 @@
             // chatGPT make a js function that returns a random GIF
             function getRandomGif() {
                 const gifFiles = [
-                    "shocked-monkey1.gif",
-                    "shocked-monkey2.gif",
+                    "shocked-monkey1",
+                    "shocked-monkey2",
+                    "shocked-monkey3",
+                    "angry-monkey",
+                    "type-monkey",
                 ];
-                const randomGif = gifFiles[Math.floor(Math.random() * gifFiles.length)];
-                document.getElementById("gif").src = `/assets/gifs/${randomGif}`;
+                const randomIndex = Math.floor(Math.random() * gifFiles.length);
+                const randomGif = gifFiles[randomIndex];
+                const placeholderImage = new Image();
+
+                // Preload webp image as a placeholder
+                placeholderImage.src = `assets/images/gifs-first-image/${randomGif.concat(".webp")}`;
+                placeholderImage.onload = function () {
+                    // Once the webp image is loaded, set it as the placeholder
+                    let existingImage = document.getElementById("gif");
+
+                    existingImage.parentNode.replaceChild(placeholderImage, existingImage);
+                    placeholderImage.id = "gif"
+
+                    // Load the actual GIF in the background
+                    const actualGif = new Image();
+                    actualGif.src = `assets/gifs/${randomGif.concat(".gif")}`;
+                    actualGif.onload = function () {
+                        // Replace the placeholder with the loaded GIF
+                        existingImage = document.getElementById("gif");
+
+                        existingImage.parentNode.replaceChild(actualGif, existingImage);
+                        existingImage.id = "gif"
+                    };
+                };
+
             }
             window.onload = getRandomGif;
         </script>
