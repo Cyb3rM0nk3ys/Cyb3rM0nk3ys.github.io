@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    {% include head-custom.html %}
+<html lang="{{ site.lang | default: " en-US" }}">
 
-{% seo %}
-  </head>
+<head>
 
-  <body>
-    <div class="container">
-      <section id="main_content">
-        <div id="ascii-art"></div>
-        <div id="left-column">
-          <!-- mi annoiavo di questi investigatori scarsi quindi ho deciso di leakare una vera flag :) -->
-          <pre>
+  {% include head-custom.html %}
+
+  {% seo %}
+</head>
+
+<body>
+  <div class="container">
+    <section id="main_content">
+      <div id="ascii-art"></div>
+      <div id="left-column">
+        <!-- mi annoiavo di questi investigatori scarsi quindi ho deciso di leakare una vera flag :) -->
+        <pre>
             ██                                                                    
             ██        ██████████        ████████████        
             ██████████▒▒▒▒▒▒▒▒▒▒████████▒▒▒▒▒▒▒▒▒▒▒▒██  
@@ -67,11 +65,12 @@
                   ░░░░░░██░░▒▒████████████████████████░░▒▒████░░░░░░░░░░░░░░░░    
                     ░░░░░░████░░░░░░░░░░░░░░░░░░░░░░░░████░░░░░░░░░░░░░░░░            
           </pre>
-        </div>
-        <div id="right-column">
-          {{ content }}
-        </div>
-      </section>
-    </div>
-  </body>
+      </div>
+      <div id="right-column">
+        {{ content }}
+      </div>
+    </section>
+  </div>
+</body>
+
 </html>
