@@ -1,3 +1,4 @@
+<!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup theme-color -->
 {% include head-custom-theme-colors.html %}
@@ -5,23 +6,31 @@
 <!-- Setup Google Analytics -->
 {% include head-custom-google-analytics.html %}
 
-<!-- link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" -->
+
+<!-- Setup favicon, stylesheets and metadata -->
+{% include head-custom-metadata.html %}
+
 
 <header>
-<div class="container">
+  <div class="container">
     <center>
-      <img src="/assets/images/team-logo.svg" alt="Cyb3rM0nk3ys logo" width="7%" height="7%"/>
+      <img src="/assets/images/team-logo.png" alt="Cyb3rM0nk3ys logo" width="7%" height="7%"/>
+
       <a id="a-title" href="/">
         <h1>Cyb3rM0nk3ys</h1>
       </a>
-      <h2>Cyb3rM0nk3ys is a CTF team based in Verona.</h2>
+      <h2>Cyb3rM0nk3ys is a ...CTF team...</h2>
 
-      <a href="/">
+      <a href="/home">
         Home</a>
+      <a href="/about">
+        About us
+      </a>
+      <a href="/join">
+        Join us</a>
       <a href="/members">
         Monkeys</a>
-      <a href="/join">
-        Join us</a>  
+      <!-- profiles -->
     </center>
   </div>
 </header>
