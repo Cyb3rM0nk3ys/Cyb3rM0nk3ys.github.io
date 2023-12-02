@@ -4,11 +4,12 @@
 <head>
 
   {% include head-custom.html %}
-
+  
   {% seo %}
 </head>
 
 <body>
+  {% include header.html %}
   <div class="container">
     <section id="writeup">
       <small>{{ page.date | date: "%-d %B %Y" }}</small>
@@ -16,3 +17,5 @@
       <hr>
       {{content}}
     </section>
+  </div>
+  </body>
