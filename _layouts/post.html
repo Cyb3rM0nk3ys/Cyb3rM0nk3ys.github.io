@@ -9,6 +9,8 @@
 </head>
 
 <body>
+  {% include header.html %}
+
   <div class="container">
     <section id="writeup">
       <small>{{ page.date | date: "%-d %B %Y" }}</small>
@@ -21,3 +23,6 @@
       <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
       {% endif %}
     </section>
+  </div>
+
+</body>
