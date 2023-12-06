@@ -1,28 +1,15 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: " en-US" }}">
+---
+layout: default
+---
 
-<head>
+<section id="writeup">
+  <small>{{ page.date | date: "%-d %B %Y" }}</small>
+  <h1><b>{{ page.title }}</b></h1>
+  <p class="view">by {{ page.author | default: site.author }} | Category: {{ page.chall-category }}</p>
+  <hr>
+  {{content}}
 
-  {% include head-custom.html %}
-
-  {% seo %}
-</head>
-
-<body>
-  {% include header.html %}
-
-  <div class="container">
-    <section id="writeup">
-      <small>{{ page.date | date: "%-d %B %Y" }}</small>
-      <h1><b>{{ page.title }}</b></h1>
-      <p class="view">by {{ page.author | default: site.author }} | Category: {{ page.chall-category }}</p>
-      <hr>
-      {{content}}
-
-      {% if page.tags %}
-      <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
-      {% endif %}
-    </section>
-  </div>
-
-</body>
+  {% if page.tags %}
+  <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
+  {% endif %}
+</section>

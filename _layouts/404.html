@@ -1,65 +1,55 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: " en-US" }}">
-
-<head>
-    {% include head-custom.html %}
-    {% seo %}
-</head>
-
-<body>
-    {% include header.html %}
-    <div class="container">
-        <center>
-            <b>
-                <h1>404 ~ banana not found</h1>
-            </b>
-            <section id="main_content">
-                <div id="gif-container">
-                    <img id="gif" src="">
-                </div>
-            </section>
-        </center>
+---
+layout: default
+---
 
 
-        <script>
-            // chatGPT make a js function that returns a random GIF
-            function getRandomGif() {
-                const gifFiles = [
-                    "shocked-monkey1",
-                    "shocked-monkey2",
-                    "shocked-monkey3",
-                    "angry-monkey",
-                    "type-monkey",
-                ];
-                const randomIndex = Math.floor(Math.random() * gifFiles.length);
-                const randomGif = gifFiles[randomIndex];
-                const placeholderImage = new Image();
+<div class="center">
+    <b>
+        <h1>404 ~ banana not found</h1>
+    </b>
+    <section id="main_content" >
+        <div id="gif-container">
+            <img id="gif" src="">
+        </div>
+    </section>
+</div>
 
-                // Preload webp image as a placeholder
-                placeholderImage.src = `assets/images/gifs-first-image/${randomGif.concat(".webp")}`;
-                placeholderImage.onload = function () {
-                    // Once the webp image is loaded, set it as the placeholder
-                    let existingImage = document.getElementById("gif");
 
-                    existingImage.parentNode.replaceChild(placeholderImage, existingImage);
-                    placeholderImage.id = "gif"
+<script>
+    // chatGPT make a js function that returns a random GIF
+    function getRandomGif() {
+        const gifFiles = [
+            "shocked-monkey1",
+            "shocked-monkey2",
+            "shocked-monkey3",
+            "angry-monkey",
+            "type-monkey",
+        ];
+        const randomIndex = Math.floor(Math.random() * gifFiles.length);
+        const randomGif = gifFiles[randomIndex];
+        const placeholderImage = new Image();
 
-                    // Load the actual GIF in the background
-                    const actualGif = new Image();
-                    actualGif.src = `assets/gifs/${randomGif.concat(".gif")}`;
-                    actualGif.onload = function () {
-                        // Replace the placeholder with the loaded GIF
-                        existingImage = document.getElementById("gif");
+        // Preload webp image as a placeholder
+        placeholderImage.src = `assets/images/gifs-first-image/${randomGif.concat(".webp")}`;
+        placeholderImage.onload = function () {
+            // Once the webp image is loaded, set it as the placeholder
+            let existingImage = document.getElementById("gif");
 
-                        existingImage.parentNode.replaceChild(actualGif, existingImage);
-                        existingImage.id = "gif"
-                    };
-                };
+            existingImage.parentNode.replaceChild(placeholderImage, existingImage);
+            placeholderImage.id = "gif"
 
-            }
-            window.onload = getRandomGif;
-        </script>
+            // Load the actual GIF in the background
+            const actualGif = new Image();
+            actualGif.src = `assets/gifs/${randomGif.concat(".gif")}`;
+            actualGif.onload = function () {
+                // Replace the placeholder with the loaded GIF
+                existingImage = document.getElementById("gif");
 
-</body>
+                existingImage.parentNode.replaceChild(actualGif, existingImage);
+                existingImage.id = "gif"
+            };
+        };
 
-</html>
+    }
+    window.onload = getRandomGif;
+</script>

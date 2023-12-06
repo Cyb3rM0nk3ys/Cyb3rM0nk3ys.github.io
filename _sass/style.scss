@@ -7,3 +7,32 @@
     text-align: center;
     width: 100%;
 }
+
+.center {
+    text-align: center;
+    width: 100%;
+}
+
+.iconSocial{
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -0.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+
+.max-one-third {
+    max-width: 100%; /* Ensure image doesn't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#container{
+    padding: 2%;
+
+}

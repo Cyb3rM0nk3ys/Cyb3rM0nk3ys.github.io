@@ -6,3 +6,4 @@ theme: jekyll-theme-hacker
 collections:
   achievements:
     output: true
+include: ['_pages']

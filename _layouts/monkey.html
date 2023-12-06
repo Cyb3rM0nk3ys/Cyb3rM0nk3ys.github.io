@@ -1,0 +1,95 @@
+---
+layout: default
+---
+
+<div class="about-me">
+  <h2>About {{ page.monkey }}</h2>
+  <div class="profile">
+    <div id="monkey-image-container">
+      <div id="left-column">
+        {% if page.image %} {% if page.image contains 'http://' or page.image
+        contains 'https://' %}
+        <!-- External Image -->
+        <img
+          src="{{ page.image }}"
+          alt="External Image"
+          class="max-one-third"
+          id="monkey-image"
+        />
+        {% else %}
+        <!-- Local Image -->
+        <img
+          src="{{ site.baseurl }}/assets/images/{{ page.image }}"
+          alt="Image"
+          class="max-one-third"
+          id="monkey-image"
+
+        />
+        {% endif %} {% endif %}
+      </div>
+    </div>
+    <div id="right-column">
+      <ul class="socials">
+        {% for network in page.social_networks %}
+        <li>
+          {% if network.handle %}
+          <a href="{{ network.handle }}">Link</a>
+          {% else %} No handle provided {% endif %} {% assign firstCharacter =
+          network.icon | slice: 0 %} {% if network.icon %} {% if firstCharacter
+          == "/" or network.icon contains "http://" or network.icon contains
+          "https://" %}
+          <img
+            src="{{ network.icon }}"
+            class="iconSocial"
+            alt="{{ network.name }}"
+            width="16"
+            height="16"
+          />
+          {% else %}
+          <i class="bi bi-{{ network.icon }}"></i>
+          {% endif %} {% else %}
+          <i class="bi bi-{{ network.name | downcase }}"></i>
+
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+
+      {{content}}
+    </div>
+  </div>
+</div>
+
+<script>
+    const image = document.getElementById('monkey-image');
+    const container = document.body;
+    
+    const maxTilt = 2; // Maximum tilt angle
+    const maxMovement = 1; // Maximum movement distance
+    
+    container.addEventListener('mousemove', (e) => {
+      const containerRect = container.getBoundingClientRect();
+      const x = e.clientX - containerRect.left;
+      const y = e.clientY - containerRect.top;
+      
+      const offsetX = containerRect.width / 2 - x;
+      const offsetY = containerRect.height / 2 - y;
+      
+      const percentageX = offsetX / containerRect.width;
+      const percentageY = offsetY / containerRect.height;
+      
+      const tiltX = percentageX * maxTilt;
+      const tiltY = percentageY * maxTilt;
+      
+      const movementX = percentageX * maxMovement;
+      const movementY = percentageY * maxMovement;
+      
+      image.style.transform = `perspective(1000px) rotateX(${tiltY}deg) rotateY(${-tiltX}deg) translate(${movementX}px, ${movementY}px)`;
+    });
+    
+    container.addEventListener('mouseleave', () => {
+      image.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translate(0, 0)';
+    });
+    
+    
+  </script>
