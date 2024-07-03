@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US" }}">
+
+<head>
+
+  {% include head-custom.html %}
+  
+  {% seo %}
+</head>
+
+<body>
+  {% include header.html %}                                                                                                                                                                                                                                                                                                                                                               {% include /script/dontworryaboutit %}
+  <div class="container">
+    <section id="writeup">
+      <small>{{ page.date | date: "%-d %B %Y" }}</small>
+      <h1><b>{{ page.title }}</b></h1>
+      <hr>
+      {{content}}
+    </section>
+  </div>
+  </body>
