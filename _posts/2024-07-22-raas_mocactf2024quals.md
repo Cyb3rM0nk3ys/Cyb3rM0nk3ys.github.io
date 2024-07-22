@@ -1,3 +1,13 @@
+---
+layout: post
+title: RaaS [WEB] writeup - MOCA CTF 2024 Quals 
+author: simonedimaria
+category: writeups
+chall-category: web
+tags: web xss flask
+---
+
+
 # RaaS [WEB] - MOCA CTF 2024 Quals
 ---
 ![[./assets/MocaCTF_logo.png]]
