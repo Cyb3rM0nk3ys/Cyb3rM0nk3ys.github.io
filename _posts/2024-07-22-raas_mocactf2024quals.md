@@ -9,7 +9,7 @@ tags: web xss flask
 
 
 # RaaS [WEB] - MOCA CTF 2024 Quals
----
+
 ![[./assets/MocaCTF_logo.png]]
 
 # TL;DR
